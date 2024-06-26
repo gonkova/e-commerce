@@ -24,12 +24,12 @@ const Hero = () => {
               listening for up to 35 hours since start.
             </p>
             <div className="flex space-x-4 mt-4">
-              <Button className="bg-purple text-white text-base border-none hover:bg-dark">
+              <Button className="bg-purple text-base font-bold py-2 px-8  border-0 hover:bg-dark">
                 Buy Now
               </Button>
-              <Button className="bg-transparent text-base hover:bg-purple ">
+              <button className="bg-transparent text-base text-purple border border-purple rounded-lg font-bold py-2 px-6  hover:bg-purple hover:text-white">
                 Learn Now
-              </Button>
+              </button>
             </div>
             <AiOutlineArrowDown className="text-3xl text-lightGray mt-10 cursor-pointer" />
           </div>

@@ -42,9 +42,9 @@ export default function SectionBlog() {
             shopping
           </p>
         </div>
-        <Button className="bg-transparent text-base hover:bg-purple ">
-          More on blogs
-        </Button>
+        <button className="text-secondary text-base font-semibold px-4 py-2 rounded-lg border border-secondary  hover:bg-secondary hover:text-white">
+        More on blogs
+        </button>
       </div>
       <div className="grid grid-col-1 md:grid-cols-3 gap-10 md:gap-6 px-12 mt-14 mb-14">
         {posts.map((p, index) => (

@@ -4,6 +4,10 @@ import { listRegions } from "@lib/data"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
+import { FaHeart, FaShoppingCart, FaYoutube, FaTwitter } from "react-icons/fa"
+import { FaUser, FaSquareFacebook } from "react-icons/fa6";
+import Image from "next/image"
+import shopping_bags from "/public/images/shopping-bags.png"
 
 export default async function Nav() {
   const regions = await listRegions().then((regions) => regions)
@@ -24,7 +28,16 @@ export default async function Nav() {
               className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
               data-testid="nav-store-link"
             >
-              Store
+              <div className="flex items-center space-x-">
+                Store
+                <Image
+                  src={shopping_bags}
+                  alt=""
+                  width={70}
+                  height={70}
+                  className="mx-auto  max-w-full p-2 cursor-pointer object-cover"
+                />
+              </div>
             </LocalizedClientLink>
           </div>
 
@@ -45,7 +58,7 @@ export default async function Nav() {
                 href="/account"
                 data-testid="nav-account-link"
               >
-                Account
+               <FaUser className="text-lightGray3 text-xl" />
               </LocalizedClientLink>
             </div>
             <Suspense

@@ -5,7 +5,7 @@ import img_banner from "/public/images/banner/img-banner.png";
 
 export default function SectionPromo() {
   return (
-    <div className="bg-custombg1 mt-20 md:mt-10 bg-cover bg-no-repeat bg-center w-full md:w-[1110px] h-auto md:h-[338px] px-4 md:px-0 mx-auto ">
+    <div className="bg-custombg1 bg-cover bg-no-repeat bg-center w-full md:w-[1110px] h-auto md:h-[338px] px-4 md:px-0 mx-auto ">
       <div className="flex flex-col-reverse md:flex-row items-center justify-around">
         <div>
           <Image
@@ -26,7 +26,7 @@ export default function SectionPromo() {
           and detail. Plus combine innovative latest AI features
           </p>
           <div className="flex itens-center justify-center space-x-4 mt-4">
-           <Button className="text-white bg-primary border-none text-base hover:bg-dark">Buy Now for &#36;750</Button>
+           <button className="text-white px-4 rounded-lg bg-primary text-base hover:bg-dark">Buy Now for &#36;750</button>
            <p className="text-lightGray text-xl line-through py-3">&#36;1500,00</p>
           </div>
         

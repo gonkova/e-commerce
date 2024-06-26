@@ -13,9 +13,9 @@ export default function ProductsCategory() {
     <div className=" mt-10 md:mt-16  py-2 mx-auto  md:px-10 w-full max-w-7xl md:h-[397px] flex flex-col gap-10">
       <div className="flex justify-between px-14 mt-10">
         <h2 className="text-[28px] font-bold">Category</h2>
-        <Button className="text-secondary border-secondary bg-transparent hover:bg-secondary text-base">
+        <button className="text-secondary text-base font-semibold px-4 rounded-lg border border-secondary  hover:bg-secondary hover:text-white">
           View All
-        </Button>
+        </button>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-6 gap-6 items-center justify-center">
         <div className="flex flex-col items-center justify-center gap-2">

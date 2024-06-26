@@ -10,9 +10,9 @@ export default async function Footer() {
   const { product_categories } = await getCategoriesList(0, 6)
 
   return (
-    <footer className="border-t border-ui-border-base w-full">
-      <div className="content-container flex flex-col w-full">
-        <div className="flex flex-col gap-y-6 xsmall:flex-row items-start justify-between py-40">
+    <footer className="bg-lightGrayishBlue  border-t border-ui-border-base w-full">
+      <div className="content-container flex flex-col w-full mx-auto ">
+        <div className=" flex-col gap-y-6 xsmall:flex-row items-start justify-between md:py-40 hidden">
           <div>
             <LocalizedClientLink
               href="/"
@@ -112,11 +112,13 @@ export default async function Footer() {
             </div>
           </div>
         </div>
-        <div className="flex w-full mb-16 justify-between text-ui-fg-muted">
+        <div className="bg-lightGrayishBlue w-full ">
+        <div className=" md:h-[64px] -mt-32 md:-mt-20 flex flex-col md:flex-row w-full py-5 mx-auto px-4 md:px-20 max-w-7xl items-center justify-center gap-3 md:justify-between text-ui-fg-muted">
           <Text className="txt-compact-small">
             © {new Date().getFullYear()} Store. All rights reserved.
           </Text>
           <MedusaCTA />
+        </div>
         </div>
       </div>
     </footer>
