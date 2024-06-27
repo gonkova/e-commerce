@@ -113,12 +113,12 @@ export default async function Footer() {
           </div>
         </div>
         <div className="bg-lightGrayishBlue w-full ">
-        <div className=" md:h-[64px] -mt-32 md:-mt-20 flex flex-col md:flex-row w-full py-5 mx-auto px-4 md:px-20 max-w-7xl items-center justify-center gap-3 md:justify-between text-ui-fg-muted">
-          <Text className="txt-compact-small">
-            © {new Date().getFullYear()} Store. All rights reserved.
-          </Text>
-          <MedusaCTA />
-        </div>
+          <div className=" md:h-[64px] -mt-32 md:-mt-20 flex flex-col md:flex-row w-full py-5 mx-auto px-4 md:px-20 max-w-7xl items-center justify-center gap-3 md:justify-between text-ui-fg-muted">
+            <Text className="txt-compact-small">
+              © {new Date().getFullYear()} Store. All rights reserved.
+            </Text>
+            <MedusaCTA />
+          </div>
         </div>
       </div>
     </footer>

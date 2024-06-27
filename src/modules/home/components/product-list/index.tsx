@@ -72,7 +72,7 @@ export default function ProductList() {
 
   return (
     <div className="py-2 md:mb-20 mx-auto md:px-10 w-full max-w-7xl flex flex-col">
-      <div className="mt-14 md:mt-0 mx-auto gap-x-24 p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-22">
+      <div className="mt-14 md:-mt-5 mx-auto gap-x-24 p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-22">
         <div>
           <h2 className="font-bold text-[22px]">Product list 1</h2>
           {productsListOne.map((product) => (

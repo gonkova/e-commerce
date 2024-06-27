@@ -5,7 +5,7 @@ export default function BestSellerProducts() {
 
     
   return (
-    <div className="py-2 mx-auto px-4 md:px-10  w-full max-w-7xl flex flex-col overflow-x-hidden mt-10 md:mt-10 md:pb-16">
+    <div className="py-2 mx-auto px-4 md:px-10  w-full max-w-7xl flex flex-col overflow-x-hidden mt-10 md:mt-5 md:pb-0">
       <div className="flex flex-col items-center justify-center gap-5 mt-10 md:mt-20">
         <h2 className=" text-3xl md:text-4xl font-bold">
           Best Seller Products

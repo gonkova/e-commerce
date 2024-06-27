@@ -9,7 +9,7 @@ const Hero = () => {
   return (
       <div className="bg-custombg bg-cover bg-no-repeat bg-center  h-auto mt-5 md:mt-0">
         <div className="py-2 mx-auto px-4 md:px-8 w-full max-w-7xl flex flex-col md:flex-row md:items-center md:justify-around ">
-          <div className="w full md:w-1/2 mt-10 mb-10 flex flex-col md:items-start gap-4">
+          <div className="w full md:w-1/2 mt-12 mb-10 flex flex-col md:items-start gap-4">
             <div className="text-primary text-sm ">SONY WH-H910N</div>
             <h1 className="text-3xl md:text-[56px] md:leading-[72px] font-bold">
               Best in Hi-Res and

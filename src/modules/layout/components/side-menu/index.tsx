@@ -31,7 +31,7 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
                   data-testid="nav-menu-button"
                   className="relative h-full flex items-center transition-all ease-out duration-200 focus:outline-none hover:text-ui-fg-base"
                 >
-                  <IoMdMenu className="text-3xl" />
+                  <IoMdMenu className="text-lightGray3 text-3xl" />
                 </Popover.Button>
               </div>
 
@@ -94,7 +94,6 @@ const SideMenu = ({ regions }: { regions: Region[] | null }) => {
                         © {new Date().getFullYear()} Store. All rights reserved.
                       </Text>
                     </div>
-
                   </div>
                 </Popover.Panel>
               </Transition>

@@ -31,7 +31,7 @@ const benefits = [
 
 export default function Benefit() {
   return (
-    <div className=" py-2 mx-auto md:px-10 w-full max-w-7xl h-auto md:h-[124px] mt-24 md:mt-8">
+    <div className=" py-2 mx-auto md:px-10 w-full max-w-7xl h-auto md:h-[124px] mt-24 md:mt-12">
       <div className="mx-auto px-4 md:px-10 grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-20">
         {benefits.map((benefit, index) => (
           <div key={index} className="flex items-center space-x-2 md:space-x-4">
