@@ -15,15 +15,15 @@ type SortProductsProps = {
 const sortOptions = [
   {
     value: "created_at",
-    label: "Latest Arrivals",
+    label: "Най-нови",
   },
   {
     value: "price_asc",
-    label: "Price: Low -> High",
+    label: "Цена: Ниска -> Висока  ",
   },
   {
     value: "price_desc",
-    label: "Price: High -> Low",
+    label: "Цена: Висока -> Ниска",
   },
 ]
 
@@ -35,7 +35,7 @@ const SortProducts = ({ 'data-testid': dataTestId, sortBy, setQueryParams }: Sor
 
   return (
     <FilterRadioGroup
-      title="Sort by"
+      title="Сортирай по"
       items={sortOptions}
       value={sortBy}
       handleChange={handleChange}

@@ -27,9 +27,10 @@ export default async function Profile() {
       <div className="mb-8 flex flex-col gap-y-4">
         <h1 className="text-2xl-semi">Profile</h1>
         <p className="text-base-regular">
-          View and update your profile information, including your name, email,
-          and phone number. You can also update your billing address, or change
-          your password.
+          Преглед и актуализация на информацията във вашия профил, включително
+          вашето име, имейл адрес и телефонен номер. Можете също така да
+          актуализирате вашите данни за фактуриране или да промените паролата
+          си.
         </p>
       </div>
       <div className="flex flex-col gap-y-8 w-full">

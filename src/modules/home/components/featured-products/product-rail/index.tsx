@@ -1,9 +1,10 @@
+// ProductRail.tsx
 import { Region } from "@medusajs/medusa"
 import { Text } from "@medusajs/ui"
-
 import InteractiveLink from "@modules/common/components/interactive-link"
-import ProductPreview from "@modules/products/components/product-preview"
+import ProductList from "../product-list"
 import { ProductCollectionWithPreviews } from "types/global"
+import { AiOutlineRight } from "react-icons/ai";
 
 export default function ProductRail({
   collection,
@@ -19,25 +20,32 @@ export default function ProductRail({
   }
 
   return (
-    <div className="content-container py-12 small:py-24">
-      <div className="flex justify-between mb-8">
-        <Text className="txt-xlarge">{collection.title}</Text>
-        <InteractiveLink href={`/collections/${collection.handle}`}>
-          View all
-        </InteractiveLink>
+    <div className="content-container ">
+        <div className="mb-10">
+        <h2 className="font-bold text-[22px]">{collection.title}</h2>
+        </div>
+          <ul className="flex flex-col items-start w-full gap-10">
+            {products &&
+              products.map((product) => (
+                <li key={product.id} >
+                  <ProductList
+                    productList={product}
+                    region={region}
+                    isFeatured
+                    textPosition="alternative"
+                    textSize="small"
+                    thumbnailSize="custom"
+                    customWidth="64px"  
+                    customHeight="auto"
+                  />
+                </li>
+              ))}
+          </ul>
+        <div className="mt-10 space-x-32 ">
+          <InteractiveLink href={`/collections/${collection.handle}`}>
+          <p className="text-blue text-base">Вижте още продукти...</p>
+          </InteractiveLink>
+        </div>
       </div>
-      <ul className="grid grid-cols-2 small:grid-cols-3 gap-x-6 gap-y-24 small:gap-y-36">
-        {products &&
-          products.map((product) => (
-            <li key={product.id}>
-              <ProductPreview
-                productPreview={product}
-                region={region}
-                isFeatured
-              />
-            </li>
-          ))}
-      </ul>
-    </div>
   )
 }

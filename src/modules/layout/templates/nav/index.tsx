@@ -23,8 +23,10 @@ export default async function Nav() {
           <PiInstagramLogoLight className="text-xl text-lightGray cursor-pointer" />
         </div>
         <div className="flex flex-row items-center space-x-4">
-          <h4 className="text-gray text-base cursor-pointer">Order tracking</h4>
-          <h4 className="text-gray text-base cursor-pointer">Help</h4>
+          <h4 className="text-gray text-base cursor-pointer">
+            Проследяване на поръчката
+          </h4>
+          <h4 className="text-gray text-base cursor-pointer">Помощ</h4>
         </div>
       </div>
       <hr className=" border-lightGrayishBlue hidden md:block" />
@@ -64,7 +66,7 @@ export default async function Nav() {
                   scroll={false}
                   data-testid="nav-search-link"
                 >
-                  Search
+                  Търсене
                 </LocalizedClientLink>
               )}
               <LocalizedClientLink
@@ -89,7 +91,14 @@ export default async function Nav() {
                   href="/cart"
                   data-testid="nav-cart-link"
                 >
-                  Cart (0)
+                  <div className="relative">
+                    <div className="border border-gray-300 rounded-full p-2">
+                      <FaShoppingCart className="text-lightGray3 text-sm" />
+                    </div>
+                    <div className="absolute top-0 right-0 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                      (0){" "}
+                    </div>
+                  </div>
                 </LocalizedClientLink>
               }
             >

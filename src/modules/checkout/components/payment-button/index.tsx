@@ -59,7 +59,7 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({
         />
       )
     default:
-      return <Button disabled>Select a payment method</Button>
+      return <Button disabled>Избери метод на плащане</Button>
   }
 }
 
@@ -77,7 +77,7 @@ const GiftCardPaymentButton = () => {
       isLoading={submitting}
       data-testid="submit-order-button"
     >
-      Place order
+     Потвърди поръчката
     </Button>
   )
 }
@@ -174,7 +174,7 @@ const StripePaymentButton = ({
         isLoading={submitting}
         data-testid={dataTestId}
       >
-        Place order
+        Потвърди поръчката
       </Button>
       <ErrorMessage
         error={errorMessage}
@@ -275,7 +275,7 @@ const ManualTestPaymentButton = ({ notReady }: { notReady: boolean }) => {
         size="large"
         data-testid="submit-order-button"
       >
-        Place order
+       Потвърди поръчката
       </Button>
       <ErrorMessage
         error={errorMessage}

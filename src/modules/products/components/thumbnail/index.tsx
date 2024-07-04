@@ -8,10 +8,12 @@ import PlaceholderImage from "@modules/common/icons/placeholder-image"
 type ThumbnailProps = {
   thumbnail?: string | null
   images?: MedusaImage[] | null
-  size?: "small" | "medium" | "large" | "full" | "square"
+  size?: "custom" | "small" | "medium" | "large" | "full" | "square"
   isFeatured?: boolean
   className?: string
   'data-testid'?: string
+  customWidth?: string 
+  customHeight?: string 
 }
 
 const Thumbnail: React.FC<ThumbnailProps> = ({
@@ -20,25 +22,35 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
   size = "small",
   isFeatured,
   className,
-  'data-testid': dataTestid
+  'data-testid': dataTestid,
+  customWidth, 
+  customHeight, 
 }) => {
   const initialImage = thumbnail || images?.[0]?.url
+
+ 
+  const customSizeStyles = size === "custom" ? {
+    width: customWidth,
+    height: customHeight
+  } : {}
 
   return (
     <Container
       className={clx(
-        "relative w-full overflow-hidden p-4 bg-ui-bg-subtle shadow-elevation-card-rest rounded-large group-hover:shadow-elevation-card-hover transition-shadow ease-in-out duration-150",
+        "relative overflow-hidden p-4 bg-ui-bg-subtle shadow-elevation-card-rest rounded-large group-hover:shadow-elevation-card-hover transition-shadow ease-in-out duration-150",
         className,
         {
           "aspect-[11/14]": isFeatured,
-          "aspect-[9/16]": !isFeatured && size !== "square",
+          "aspect-[9/16]": !isFeatured && size !== "square" && size !== "custom",
           "aspect-[1/1]": size === "square",
           "w-[180px]": size === "small",
           "w-[290px]": size === "medium",
           "w-[440px]": size === "large",
           "w-full": size === "full",
-        }
+        },
+        customSizeStyles 
       )}
+      style={customSizeStyles} 
       data-testid={dataTestid}
     >
       <ImageOrPlaceholder image={initialImage} size={size} />

@@ -10,7 +10,6 @@ import Benefit from "@modules/home/components/benefit"
 import BestSellerProducts from "@modules/home/components/best-seller-products"
 import SectionPromo from "@modules/home/components/promo"
 import ProductsCategory from "@modules/home/components/products-category"
-import ProductList from "@modules/home/components/product-list"
 import SectionBlog from "@modules/home/components/blog"
 import SectionBrandLogo from "@modules/home/components/brand-logo"
 
@@ -79,14 +78,14 @@ export default async function Home({
       <BestSellerProducts />
       <SectionPromo />
       <ProductsCategory />
-      <ProductList />
-      <SectionBlog />
-      <SectionBrandLogo />
-      <div className="py-12">
-        <ul className="flex flex-col gap-x-6">
+      <div className="py-2 md:mb-20 mx-auto px-4 md:px-16 w-full max-w-7xl mt-16 md:-mt-5  ">
+        <ul className=" mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 md:gap-x-20">
           <FeaturedProducts collections={collections} region={region} />
         </ul>
       </div>
+      <SectionBlog />
+      <SectionBrandLogo />
+      
     </>
   )
 }
