@@ -24,7 +24,7 @@ export default function ProductsCategory() {
             width={56}
             height={56}
             alt=""
-            className="w-[56px] h-[56px] object-cover cursor-pointer"
+            className="w-[36px] h-[36px] object-cover cursor-pointer"
           />
           <p className="text-sm font-bold text-dark">Category Name</p>
           <p className="text-lightGray text-sm">2,3k items</p>
@@ -35,7 +35,7 @@ export default function ProductsCategory() {
             width={56}
             height={56}
             alt=""
-            className="w-[56px] h-[56px] object-cover cursor-pointer"
+            className="w-[36px] h-[36px] object-cover cursor-pointer"
           />
           <p className="text-sm font-bold text-dark">Category Name</p>
           <p className="text-lightGray text-sm">2,3k items</p>
@@ -46,7 +46,7 @@ export default function ProductsCategory() {
             width={56}
             height={56}
             alt=""
-            className="w-[56px] h-[56px] object-cover cursor-pointer"
+           className="w-[36px] h-[36px] object-cover cursor-pointer"
           />
           <p className="text-sm font-bold text-dark">Category Name</p>
           <p className="text-lightGray text-sm">2,3k items</p>
@@ -57,7 +57,7 @@ export default function ProductsCategory() {
             width={56}
             height={56}
             alt=""
-            className="w-[56px] h-[56px] object-cover cursor-pointer"
+             className="w-[36px] h-[36px] object-cover cursor-pointer"
           />
           <p className="text-sm font-bold text-dark">Category Name</p>
           <p className="text-lightGray text-sm">2,3k items</p>
@@ -68,7 +68,7 @@ export default function ProductsCategory() {
             width={56}
             height={56}
             alt=""
-            className="w-[56px] h-[56px] object-cover cursor-pointer"
+            className="w-[36px] h-[36px] object-cover cursor-pointer"
           />
           <p className="text-sm font-bold text-dark">Category Name</p>
           <p className="text-lightGray text-sm">2,3k items</p>
@@ -79,7 +79,7 @@ export default function ProductsCategory() {
             width={56}
             height={56}
             alt=""
-            className="w-[56px] h-[56px] object-cover cursor-pointer"
+            className="w-[36px] h-[36px] object-cover cursor-pointer"
           />
           <p className="text-sm font-bold text-dark">Category Name</p>
           <p className="text-lightGray text-sm">2,3k items</p>

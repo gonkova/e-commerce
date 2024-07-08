@@ -1,7 +1,5 @@
 import { Text } from "@medusajs/ui"
-
 import { ProductPreviewType } from "types/global"
-
 import { retrievePricedProductById } from "@lib/data"
 import { getProductPrice } from "@lib/util/get-product-price"
 import { Region } from "@medusajs/medusa"
@@ -48,7 +46,7 @@ export default async function ProductPreview({
           <div className="flex items-center gap-x-2">
             {cheapestPrice && <PreviewPrice price={cheapestPrice} />}
           </div>
-        </div>
+        </div> 
       </div>
     </LocalizedClientLink>
   )

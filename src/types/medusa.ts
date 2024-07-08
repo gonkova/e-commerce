@@ -1,4 +1,8 @@
-import { Region as MedusaRegion, ProductVariant } from "@medusajs/medusa"
+import { Image as MedusaImage, ProductVariant, Region as MedusaRegion } from "@medusajs/medusa"
+
+export type ImageWithAlt = Omit<MedusaImage, 'beforeInsert'> & {
+  alt: string
+}
 
 export type Variant = Omit<ProductVariant, "beforeInsert">
 

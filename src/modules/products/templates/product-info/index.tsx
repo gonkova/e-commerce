@@ -1,12 +1,26 @@
-import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
-import { Heading, Text } from "@medusajs/ui"
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
+'use client'
+import { PricedProduct } from "@medusajs/medusa/dist/types/pricing";
+import { Heading, Text } from "@medusajs/ui";
+import LocalizedClientLink from "@modules/common/components/localized-client-link";
+import React, { useState } from "react";
 
 type ProductInfoProps = {
-  product: PricedProduct
-}
+  product: PricedProduct;
+};
 
-const ProductInfo = ({ product }: ProductInfoProps) => {
+const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
+  const [expanded, setExpanded] = useState(false);
+
+  if (!product.description) {
+    return null; // Return null or handle the case where description is not present
+  }
+
+  const toggleExpanded = () => {
+    setExpanded(!expanded);
+  };
+
+  const description = expanded ? product.description : `${product.description.substring(0, 200)}...`;
+  const showButton = product.description.length > 200; 
   return (
     <div id="product-info">
       <div className="flex flex-col gap-y-4 lg:max-w-[500px] mx-auto">
@@ -23,11 +37,21 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
         </Heading>
 
         <Text className="text-medium text-ui-fg-subtle" data-testid="product-description">
-          {product.description}
+          {description}
+          {showButton && !expanded && (
+            <button onClick={toggleExpanded} className="text-sm text-ui-fg-muted hover:text-ui-fg-subtle cursor-pointer focus:outline-none ml-2">
+              Прочети още
+            </button>
+          )}
+          {expanded && (
+            <button onClick={toggleExpanded} className="text-sm text-ui-fg-muted hover:text-ui-fg-subtle cursor-pointer focus:outline-none ml-2">
+              Скрий текста
+            </button>
+          )}
         </Text>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductInfo
+export default ProductInfo;
