@@ -160,15 +160,15 @@ export default function ProductActions({
           )}
         </div>
 
-     <div className=" flex">
+     <div className=" flex flex-row space-x-4">
      <ProductPrice product={product} variant={variant} region={region} />
-     <button className="py-4 px-8 border border-purple bg-transparent text-purple text-base font-bold">Купи</button>
+     <button className="w-40 h-12 border border-purple bg-transparent text-purple text-base font-bold">Купи</button>
 
         <Button
           onClick={handleAddToCart}
           disabled={!inStock || !variant || !!disabled || isAdding}
           variant="primary"
-          className="w-full h-10 flex items-center justify-center bg-purple"
+          className="w-60 h-12 flex items-center justify-center bg-purple"
           isLoading={isAdding}
           data-testid="add-product-button"
         >

@@ -48,9 +48,8 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
         <div className="md:w-1/2 flex flex-col gap-6 md:pl-8">
           <div className="flex flex-col gap-6">
             <ProductInfo product={product} />
-         
           </div>
-          <div className="flex flex-col gap-12 md:sticky md:top-48 md:py-0  py-8 mx-auto gap-y-4 md:max-w-[500px] ">
+          <div className="flex flex-col gap-12 md:sticky md:top-48 md:py-0 py-8 mx-auto gap-y-4 md:max-w-[500px]">
             <ProductOnboardingCta />
             <Suspense
               fallback={
@@ -61,12 +60,16 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
                 />
               }
             >
-             <ProductActionsWrapper id={product.id} region={region}/>
+              <ProductActionsWrapper id={product.id} region={region} />
             </Suspense>
           </div>
         </div>
       </div>
-      <ProductTabs product={product} />
+
+      <div className="flex flex-col gap-10 px-32 mx-auto mt-10">
+        <div>{product.description}</div>
+        <ProductTabs product={product} />
+      </div>
       <div className="content-container my-16 md:my-32" data-testid="related-products-container">
         <Suspense fallback={<SkeletonRelatedProducts />}>
           <RelatedProducts product={product} countryCode={countryCode} />
