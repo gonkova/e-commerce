@@ -162,7 +162,7 @@ export default function ProductActions({
 
      <div className=" flex flex-row space-x-4">
      <ProductPrice product={product} variant={variant} region={region} />
-     <button className="w-40 h-12 border border-purple bg-transparent text-purple text-base font-bold">Купи</button>
+     <button className="w-32 h-12 border border-purple bg-transparent text-purple text-base font-bold rounded-lg">Купи</button>
 
         <Button
           onClick={handleAddToCart}

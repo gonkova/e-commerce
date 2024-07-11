@@ -24,6 +24,10 @@ export type ProductPreviewType = {
   isFeatured?: boolean
 }
 
+
+
+
+
 export type ProductCollectionWithPreviews = Omit<
   ProductCollection,
   "products"
@@ -37,6 +41,10 @@ export type InfiniteProductPage = {
     count: number
   }
 }
+
+
+
+
 
 export type ProductVariantInfo = Pick<ProductVariant, "prices">
 

@@ -15,6 +15,7 @@ const SideMenuItems = {
   Търсене: "/search",
   Профил: "/account",
   Количка: "/cart",
+  Продукти: "/filters-products"
 }
 
 const SideMenu = ({ regions }: { regions: Region[] | null }) => {

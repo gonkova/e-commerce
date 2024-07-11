@@ -4,10 +4,11 @@ import SkeletonProductGrid from "@modules/skeletons/templates/skeleton-product-g
 import RefinementList from "@modules/store/components/refinement-list"
 import { SortOptions } from "@modules/store/components/refinement-list/sort-products"
 
-import PaginatedProducts from "./paginated-products"
+import CustomPaginatedProducts from "./custom-paginated-products"
+import FilterProducts from "./filter-product"
 
 
-const StoreTemplate = ({
+const FilterProductsTemplate = ({
   sortBy,
   page,
   countryCode,
@@ -20,15 +21,17 @@ const StoreTemplate = ({
 
   return (
     <div className="flex flex-col small:flex-row small:items-start py-6 content-container" data-testid="category-container">
-      <RefinementList sortBy={sortBy || "created_at"} />
+     <div>
+     <RefinementList sortBy={sortBy || "created_at"} />
+     <FilterProducts />
+     </div>
       <div className="w-full">
         <div className="mb-8 text-2xl-semi">
-          <h1 data-testid="store-page-title">Всички продукти</h1>
+          <h1 data-testid="store-page-title">Всички продуктиmmm</h1>
         </div>
         <Suspense fallback={<SkeletonProductGrid />}>
-  
-
-          <PaginatedProducts
+     
+          <CustomPaginatedProducts
             sortBy={sortBy || "created_at"}
             page={pageNumber}
             countryCode={countryCode}
@@ -39,4 +42,4 @@ const StoreTemplate = ({
   )
 }
 
-export default StoreTemplate
+export default FilterProductsTemplate
