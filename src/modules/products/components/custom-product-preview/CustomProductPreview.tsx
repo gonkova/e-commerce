@@ -38,9 +38,9 @@ export default async function CustomProductPreview({
     >
       <div
         data-testid="product-wrapper"
-        className="relative  flex flex-col items-center"
+        className="relative  flex flex-col items-center "
       >
-        <div className="w-10 h-10 rounded-full border border-lightGrayishBlue flex items-center justify-center ml-52 z-10">
+        <div className="w-10 h-10 rounded-full border border-lightGrayishBlue flex items-center justify-center ml-32 md:ml-52 z-10">
           <FaHeart className="text-lightGray3 text-sm hover:text-red" />
         </div>
         <Thumbnail
@@ -48,11 +48,11 @@ export default async function CustomProductPreview({
           size="small"
           isFeatured={isFeatured}
         />
-        <div className="flex flex-col txt-compact-medium mt-4 justify-between w-[200px]">
+        <div className="flex flex-col txt-compact-medium mt-4 justify-between w-full md:w-[180px]">
           <div className="flex items-center justify-between gap-x-2">
             {cheapestPrice && <PreviewPrice price={cheapestPrice} />}
             <div className="w-12 h-8 rounded-lg border border-lightGrayishBlue flex items-center justify-center text-red text-xs bg-bgRed">
-             SALE
+              SALE
             </div>
           </div>
           <div>
@@ -61,8 +61,8 @@ export default async function CustomProductPreview({
             </Text>
           </div>
         </div>
-        <div className="flex items-center justify-center mt-2 w-full">
-          <button className="hidden group-hover:flex absolute z-50 bottom-0 w-full translate-y-full items-center justify-center bg-purple text-white px-3 py-2 rounded">
+        <div className="flex items-center justify-center mt-2 w-full ">
+          <button className="hidden group-hover:flex absolute z-50 bottom-0 w-[180px] translate-y-full items-center justify-center bg-indigoBlue text-white px-3 py-2 rounded">
             <FaShoppingCart className="mr-2" /> View Store
           </button>
         </div>

@@ -62,7 +62,7 @@ export default async function CustomPaginatedProducts({
 
   return (
     <>
-      <ul className="grid grid-cols-2 w-full small:grid-cols-3 medium:grid-cols-4 gap-x-6 gap-y-8" data-testid="products-list">
+      <ul className="grid grid-cols-2 gap-x-10 w-full small:grid-cols-3 medium:grid-cols-4 md:gap-x-6 gap-y-8" data-testid="products-list">
         {products.map((p) => {
           return (
             <li key={p.id}>

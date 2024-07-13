@@ -1,22 +1,22 @@
-import { Region as MedusaRegion } from "@medusajs/medusa";
-import { PricedProduct } from "@medusajs/medusa/dist/types/pricing";
-import React, { Suspense } from "react";
-import ProductActions from "@modules/products/components/product-actions";
-import ProductOnboardingCta from "@modules/products/components/product-onboarding-cta";
-import ProductTabs from "@modules/products/components/product-tabs";
-import RelatedProducts from "@modules/products/components/related-products";
-import ProductInfo from "@modules/products/templates/product-info";
-import SkeletonRelatedProducts from "@modules/skeletons/templates/skeleton-related-products";
-import { notFound } from "next/navigation";
-import ProductActionsWrapper from "./product-actions-wrapper";
-import CustomImageGallery from "./product-info/CustomImageGallery";
-import { ImageWithAlt } from "types/medusa";
+import { Region as MedusaRegion } from "@medusajs/medusa"
+import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
+import React, { Suspense } from "react"
+import ProductActions from "@modules/products/components/product-actions"
+import ProductOnboardingCta from "@modules/products/components/product-onboarding-cta"
+import ProductTabs from "@modules/products/components/product-tabs"
+import RelatedProducts from "@modules/products/components/related-products"
+import ProductInfo from "@modules/products/templates/product-info"
+import SkeletonRelatedProducts from "@modules/skeletons/templates/skeleton-related-products"
+import { notFound } from "next/navigation"
+import ProductActionsWrapper from "./product-actions-wrapper"
+import CustomImageGallery from "./product-info/CustomImageGallery"
+import { ImageWithAlt } from "types/medusa"
 
 type ProductTemplateProps = {
-  product: PricedProduct;
-  region: MedusaRegion;
-  countryCode: string;
-};
+  product: PricedProduct
+  region: MedusaRegion
+  countryCode: string
+}
 
 const ProductTemplate: React.FC<ProductTemplateProps> = ({
   product,
@@ -24,10 +24,10 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
   countryCode,
 }) => {
   if (!product || !product.id) {
-    return notFound();
+    return notFound()
   }
 
-  const images = product.images ?? [];
+  const images = product.images ?? []
 
   const imagesWithAlt: ImageWithAlt[] = images.map((image, index) => ({
     id: image.id,
@@ -37,11 +37,14 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
     url: image.url,
     metadata: image.metadata,
     alt: `Product image ${index + 1}`,
-  }));
+  }))
 
   return (
     <>
-      <div className="content-container flex flex-col md:flex-row md:items-start py-6 relative" data-testid="product-container">
+      <div
+        className="content-container flex flex-col md:flex-row md:items-start py-6 relative"
+        data-testid="product-container"
+      >
         <div className="md:w-1/2 w-full relative mb-8 md:mb-0">
           <CustomImageGallery images={imagesWithAlt} />
         </div>
@@ -66,17 +69,20 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
         </div>
       </div>
 
-      <div className="flex flex-col gap-10 px-32 mx-auto mt-10">
+      <div className="flex flex-col gap-10 px-6 md:px-32 mx-auto md:mt-10">
         <div>{product.description}</div>
         <ProductTabs product={product} />
       </div>
-      <div className="content-container my-16 md:my-32" data-testid="related-products-container">
+      <div
+        className="content-container my-16 md:my-32"
+        data-testid="related-products-container"
+      >
         <Suspense fallback={<SkeletonRelatedProducts />}>
           <RelatedProducts product={product} countryCode={countryCode} />
         </Suspense>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default ProductTemplate;
+export default ProductTemplate

@@ -7,12 +7,12 @@ const CategoryFilter = ({
   categories,
   handleChange,
   handleSeeAllCategories,
-  selectedCategory, // Add this line to destructure selectedCategory
+  selectedCategory,
 }: {
   categories: { value: string; label: string; imageSrc: string }[]
   selectedCategory: string
   handleChange: (value: string) => void
-  handleSeeAllCategories: () => void // Add handleSeeAllCategories to the props type
+  handleSeeAllCategories: () => void 
 }) => {
   return (
     <div data-testid="category-filter" className="w-full">
@@ -33,8 +33,8 @@ const CategoryFilter = ({
               />
             </div>
             <div className="flex items-center justify-between w-[180px]">
-              <span className="flex-1">{category.label}</span>
-              <AiOutlineDown className="ml-2"/>
+              <span className="flex-1 text-gray">{category.label}</span>
+              <AiOutlineDown className="ml-2 text-gray"/>
             </div>
           </div>
         ))}

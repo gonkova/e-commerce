@@ -52,10 +52,10 @@ const PriceFilter = ({
       </div>
       <div className="flex flex-col gap-5 mt-1">
         <div className="w-[200px] flex flex-row items-center space-x-4">
-          <div className="flex-1 flex items-center justify-center border border-lightGrayishBlue  rounded-lg h-10 text-purple">
+          <div className="flex-1 flex items-center justify-center border border-lightGrayishBlue  rounded-lg h-10 text-indigoBlue">
             $0-150
           </div>
-          <div className="flex-1 flex items-center justify-center border border-lightGrayishBlue  rounded-lg h-10  text-purple">
+          <div className="flex-1 flex items-center justify-center border border-lightGrayishBlue  rounded-lg h-10  text-indigoBlue">
             $150-300
           </div>
         </div>

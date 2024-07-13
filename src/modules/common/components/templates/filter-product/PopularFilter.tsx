@@ -18,7 +18,7 @@ const PopularFilter = () => {
   }
 
   return (
-    <div className="p-4 border border-gray-300 rounded-lg">
+    <div >
       <h3 className="text-sm font-bold mb-5">Popular Filter</h3>
       <div className="flex flex-col gap-2">
         <label className="flex items-center text-gray">
