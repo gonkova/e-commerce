@@ -1,4 +1,5 @@
 "use client"
+
 import { Region } from "@medusajs/medusa"
 import { PricedProduct } from "@medusajs/medusa/dist/types/pricing"
 import { Button } from "@medusajs/ui"
@@ -11,6 +12,7 @@ import { useIntersection } from "@lib/hooks/use-in-view"
 import { addToCart } from "@modules/cart/actions"
 import Divider from "@modules/common/components/divider"
 import OptionSelect from "@modules/products/components/option-select"
+import CartItemSelect from "@modules/cart/components/cart-item-select"  // Импортиране на CartItemSelect
 
 import MobileActions from "../mobile-actions"
 import ProductPrice from "../product-price"
@@ -34,6 +36,7 @@ export default function ProductActions({
   disabled,
 }: ProductActionsProps) {
   const [options, setOptions] = useState<Record<string, string>>({})
+  const [quantity, setQuantity] = useState(1)
   const [isAdding, setIsAdding] = useState(false)
 
   const countryCode = useParams().countryCode as string
@@ -128,40 +131,65 @@ export default function ProductActions({
 
     await addToCart({
       variantId: variant.id,
-      quantity: 1,
+      quantity,
       countryCode,
     })
 
     setIsAdding(false)
   }
 
+  // handler for changing quantity
+  const handleQuantityChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setQuantity(Number(e.target.value))
+  }
+  
+
   return (
     <>
-      <div className=" flex flex-col gap-y-2" ref={actionsRef}>
-        <div>
-          {product.variants.length > 1 && (
-            <div className="flex flex-col gap-y-4">
-              {(product.options || []).map((option) => {
-                return (
-                  <div key={option.id}>
-                    <OptionSelect
-                      option={option}
-                      current={options[option.id]}
-                      updateOption={updateOptions}
-                      title={option.title}
-                      data-testid="product-options"
-                      disabled={!!disabled || isAdding}
-                    />
-                  </div>
-                )
-              })}
-              <Divider />
+      <div className="flex flex-col gap-y-2" ref={actionsRef}>
+        <div className="flex items-center space-x-4">
+          <div>
+            <div>
+              {product.variants.length > 1 && (
+                <div className="flex flex-col gap-y-4">
+                  {(product.options || []).map((option) => {
+                    return (
+                      <div key={option.id}>
+                        <OptionSelect
+                          option={option}
+                          current={options[option.id]}
+                          updateOption={updateOptions}
+                          title={option.title}
+                          data-testid="product-options"
+                          disabled={!!disabled || isAdding}
+                        />
+                      </div>
+                    )
+                  })}
+                  <Divider />
+                </div>
+              )}
             </div>
-          )}
+          </div>
+          <div className="flex flex-col  mb-5">
+            <p className="text-gray text-sm mb-2">Quantity</p>
+            <CartItemSelect
+          value={quantity} 
+          onChange={handleQuantityChange} 
+            className="w-16 h-10 border border-lightGray bg-transparent text-gray text-base font-bold rounded-lg"
+        >
+          {Array.from({ length: 10 }, (_, i) => (
+            <option value={i + 1} key={i}>
+              {i + 1}
+            </option>
+          ))}
+        </CartItemSelect>
+          </div>
         </div>
-        <div className="mt-2 flex flex-col md:flex-row ">
+
+        <div className="mt-2 flex flex-col md:flex-row">
           <div className="w-full px-auto flex flex-col gap-4 md:gap-0 md:flex-row md:space-x-4">
-            <div className="flex justify-between">
+            <div className="flex justify-between md:space-x-4">
               <ProductPrice
                 product={product}
                 variant={variant}
@@ -171,12 +199,12 @@ export default function ProductActions({
                 Купи
               </button>
             </div>
-            <div className="">
+            <div>
               <Button
                 onClick={handleAddToCart}
                 disabled={!inStock || !variant || !!disabled || isAdding}
                 variant="primary"
-                className="w-80 px-auto md:w-50 h-12 flex items-center justify-center bg-purple"
+                className="w-80 px-auto md:w-48 h-12 flex items-center justify-center bg-purple"
                 isLoading={isAdding}
                 data-testid="add-product-button"
               >
@@ -194,6 +222,7 @@ export default function ProductActions({
             </div>
           </div>
         </div>
+
         <MobileActions
           product={product}
           variant={variant}
